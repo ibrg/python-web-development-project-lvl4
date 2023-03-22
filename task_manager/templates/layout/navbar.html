@@ -1,0 +1,22 @@
+{% load i18n %}
+ <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">{% translate "Менеджер задач" %}</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse flex-align-end" id="navbarCollapse">
+        <ul class="navbar-nav  mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">{% translate "Пользователи" %}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">{% translate "Вход" %}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link">{% translate "Регистрация" %}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
