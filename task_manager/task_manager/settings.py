@@ -30,7 +30,7 @@ DATABASE_URL = os.getenv('DATABASE_URL')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOST = ['127.0.0.1', 'webserver']
+ALLOWED_HOST = ['127.0.0.1', 'webserver', 'fluent-number-production.up.railway.app']
 
 
 # Application definition
@@ -59,7 +59,7 @@ ROOT_URLCONF = 'task_manager.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
