@@ -1,2 +1,5 @@
 runserver:
-	poetry run gunicorn task_manager.task_manager.wsgi:application
+	poetry run python task_manager/manage.py runserver
+
+test:
+	poetry run python task_manager/manage.py test tests
