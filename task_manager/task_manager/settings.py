@@ -31,8 +31,8 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = os.getenv('DEBUG')
 TEMPLATE_DEBUG = False
 
-ALLOWED_HOSTS = ['fluent-number-production.up.railway.app/', 'webserver', 'localhost', '127.0.0.1']
-CSRF_TRUSTED_ORIGINS = ['https://fluent-number-production.up.railway.app/',]
+ALLOWED_HOSTS = ['fluent-number-production.up.railway.app', 'webserver', 'localhost', '127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['https://fluent-number-production.up.railway.app',]
 
 # Application definition
 
