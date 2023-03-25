@@ -10,9 +10,10 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 import os
+from pathlib import Path
+
 import dj_database_url
 from dotenv import load_dotenv
-from pathlib import Path
 
 load_dotenv()
 
@@ -45,7 +46,8 @@ INSTALLED_APPS = [
     'bootstrap4',
     'core.apps.CoreConfig',
     'users.apps.UsersConfig',
-    'statuses.apps.StatusesConfig'
+    'statuses.apps.StatusesConfig',
+    'tasks.apps.TasksConfig'
 ]
 
 MIDDLEWARE = [

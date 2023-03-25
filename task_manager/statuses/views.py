@@ -1,9 +1,12 @@
-from django.utils.translation import gettext as _
-
+from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
-
+from django.db.models import RestrictedError
+from django.http import HttpResponseRedirect
+from django.utils.translation import gettext as _
+from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.views.generic.list import ListView
-from django.views.generic.edit import CreateView, UpdateView, DeleteView
+
+from core.permissions import CanDelete, IsOwner
 
 from .models import Status
 
@@ -41,8 +44,20 @@ class StatusUpdateView(SuccessMessageMixin, UpdateView):
         return context
 
 
-class StatusDeleteView(SuccessMessageMixin, DeleteView):
+class StatusDeleteView(DeleteView):
     model = Status
     tempalte_name = 'statuses/delete.html'
     success_url = '/statuses/'
     success_message = _('Статус успешно удалён')
+    error_message = _('Невозможно удалить статус, потому что он используется')
+
+    def post(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        success_url = self.get_success_url()
+        try:
+            self.object.delete()
+            messages.success(request, self.success_message)
+        except RestrictedError:
+            messages.error(request, self.error_message)
+        finally:
+            return HttpResponseRedirect(success_url)

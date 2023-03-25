@@ -1,16 +1,14 @@
-from django.urls import reverse_lazy
-
-from django.contrib.messages.views import SuccessMessageMixin, messages
 from django.contrib.auth.models import User
 from django.contrib.auth.views import LoginView, LogoutView
-
-from django.views.generic.list import ListView
-from django.views.generic.edit import UpdateView, CreateView, DeleteView
-
+from django.contrib.messages.views import SuccessMessageMixin, messages
+from django.urls import reverse_lazy
 from django.utils.translation import gettext as _
-from .forms import UserRegistrationForm
+from django.views.generic.edit import CreateView, DeleteView, UpdateView
+from django.views.generic.list import ListView
 
-from .permissions import LoginRequired, AccessRequired
+from core.permissions import AccessRequired, LoginRequired
+
+from .forms import UserRegistrationForm
 
 
 class Login(SuccessMessageMixin, LoginView):

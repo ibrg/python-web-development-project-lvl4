@@ -1,7 +1,6 @@
 import requests
 from django.test import TestCase
 
-
 DOMAIN = 'http://localhost:8000'
 
 
