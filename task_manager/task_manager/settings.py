@@ -30,6 +30,7 @@ DATABASE_URL = os.getenv('DATABASE_URL')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+# TEMPLATE_DEBUG = False
 
 ALLOWED_HOSTS = ['fluent-number-production.up.railway.app', 'webserver', 'localhost', '127.0.0.1']
 
