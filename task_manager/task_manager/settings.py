@@ -33,7 +33,7 @@ DEBUG = True
 # TEMPLATE_DEBUG = False
 
 ALLOWED_HOSTS = ['fluent-number-production.up.railway.app', 'webserver', 'localhost', '127.0.0.1']
-
+CSRF_TRUSTED_ORIGINS = ALLOWED_HOSTS
 
 # Application definition
 
