@@ -1,4 +1,3 @@
-from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 
 from django.contrib.messages.views import SuccessMessageMixin, messages
@@ -45,7 +44,7 @@ class UserUpdateView(LoginRequired, AccessRequired, SuccessMessageMixin, UpdateV
     template_name_suffix = '_update_form'
     success_url = '/users/'
     success_message = _('Пользователь успешно изменён')
-    
+
     def get_context_data(self, **kwargs):
         context = super(UserUpdateView, self).get_context_data(**kwargs)
         context['btn_name'] = _('Изменить')

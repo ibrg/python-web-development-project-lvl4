@@ -12,4 +12,3 @@ def index(request):
         "link": link
     }
     return render(request, 'index.html', context)
-

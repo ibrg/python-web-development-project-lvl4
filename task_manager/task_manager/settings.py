@@ -13,7 +13,6 @@ import os
 import dj_database_url
 from dotenv import load_dotenv
 from pathlib import Path
-from django.utils.translation import gettext_lazy as _
 
 load_dotenv()
 
@@ -44,8 +43,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bootstrap4',
+    'core.apps.CoreConfig',
     'users.apps.UsersConfig',
-    'core.apps.CoreConfig'
+    'statuses.apps.StatusesConfig'
 ]
 
 MIDDLEWARE = [
@@ -73,7 +73,6 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                
             ],
         },
     },
@@ -126,7 +125,7 @@ LANGUAGE_CODE = 'ru-RU'
 
 TIME_ZONE = 'UTC'
 
-USE_I18N =True
+USE_I18N = True
 
 USE_L10N = True
 

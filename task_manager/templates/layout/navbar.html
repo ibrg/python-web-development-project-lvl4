@@ -12,6 +12,11 @@
           <a class="nav-link active" aria-current="page" 
           href="{% url 'users_list' %}">{% translate "Пользователи" %}</a>
         </li>
+        {% if user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'status_list' %}">{% translate "Статусы" %}</a>
+        </li>
+        {% endif %}
       </ul>
       <ul class="col-4 d-flex justify-content-end align-items-right navbar-nav">
         {% if user.is_authenticated %}
