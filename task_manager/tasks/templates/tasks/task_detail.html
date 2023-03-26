@@ -38,7 +38,9 @@
                         <h6>Метки:</h6>
                         <ul>
                             {% if object.labels %}
-                            <li>{{ object.labels }}</li>
+                                {% for label in object.labels.all  %}
+                                    <li>{{ label.name }}</li>
+                                {% endfor %}
                             {% endif %}
                         </ul>
                     </div>

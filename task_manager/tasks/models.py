@@ -3,6 +3,7 @@ from django.db import models
 from django.utils.translation import gettext as _
 
 from statuses.models import Status
+from labels.models import Label
 
 
 class Task(models.Model):
@@ -11,7 +12,7 @@ class Task(models.Model):
     status = models.ForeignKey(Status, on_delete=models.RESTRICT)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='author')
     executor = models.ForeignKey(User, on_delete=models.CASCADE, related_name='executor', blank=True, null=True)
-    labels = models.CharField(max_length=100, blank=True, null=True)
+    labels = models.ManyToManyField(Label, related_name='labels')
     creatad_at = models.DateTimeField(auto_now=True)
 
     class Meta:

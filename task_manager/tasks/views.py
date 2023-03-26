@@ -8,7 +8,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 from .models import Task
 from .forms import TaskFrom
-from core.permissions import CanDelete, IsOwner
+from core.permissions import IsOwner
 
 
 class TaskListView(ListView):
@@ -27,7 +27,7 @@ class TaskCreateView(SuccessMessageMixin, CreateView):
     tempalte_name = 'tasks/task_form.html'
     success_url = '/tasks/'
     success_message = _('Задача успешно создана')
- 
+
     def form_valid(self, form):
         obj = form.save(commit=False)
         obj.author = self.request.user

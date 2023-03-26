@@ -10,7 +10,7 @@ class Status(models.Model):
     class Meta:
         """Meta definition for Status."""
         verbose_name = _('Status')
-        verbose_name_plural = _('Statuss')
+        verbose_name_plural = _('Statuses')
 
     def __str__(self):
         """Unicode representation of Status."""

@@ -5,9 +5,6 @@ from django.http import HttpResponseRedirect
 from django.utils.translation import gettext as _
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.views.generic.list import ListView
-
-from core.permissions import CanDelete, IsOwner
-
 from .models import Status
 
 

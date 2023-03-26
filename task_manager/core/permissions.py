@@ -2,8 +2,6 @@ from django.contrib import messages
 from django.shortcuts import redirect
 from django.utils.translation import gettext as _
 
-from tasks.models import Task
-
 
 class LoginRequired:
     login_url = '/login/'
@@ -31,20 +29,8 @@ class AccessRequired:
         return super().dispatch(request, *args, **kwargs)
 
 
-class CanDelete:
-    error_message = _('Невозможно удалить статус, потому что он используется ')
-
-    def delete(self, request, *args, **kwargs):
-        obj = self.get_object()
-        if Task.objects.filter(sattus=obj).count() > 0:
-            messages.add_message(request, messages.ERROR, "Can't be deleted, has childern")
-            return redirect('/')
-        return super().delete(request, *args, **kwargs)
-
-
-    
 class IsOwner:
-    alert_message = _('Задачу может удалить только её автор ')
+    alert_message = _('Задачу может удалить только её автор')
 
     def has_object_permission(self, *args, **kwargs):
         # Read permissions are allowed to any request,

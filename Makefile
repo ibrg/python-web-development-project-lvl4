@@ -3,3 +3,6 @@ runserver:
 
 test:
 	poetry run python task_manager/manage.py test tests
+
+lint:
+	poetry run python -m flake8 task_manager

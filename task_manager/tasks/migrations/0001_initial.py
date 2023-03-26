@@ -23,8 +23,10 @@ class Migration(migrations.Migration):
                 ('description', models.TextField(blank=True, null=True)),
                 ('labels', models.CharField(blank=True, max_length=100, null=True)),
                 ('creatad_at', models.DateTimeField(auto_now=True)),
-                ('author', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='author', to=settings.AUTH_USER_MODEL)),
-                ('executor', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='executor', to=settings.AUTH_USER_MODEL)),
+                ('author', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE,
+                 related_name='author', to=settings.AUTH_USER_MODEL)),
+                ('executor', models.ForeignKey(blank=True, null=True,
+                 on_delete=django.db.models.deletion.CASCADE, related_name='executor', to=settings.AUTH_USER_MODEL)),
                 ('status', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='statuses.status')),
             ],
             options={
