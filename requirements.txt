@@ -17,3 +17,4 @@ urllib3==1.26.15
 whitenoise==6.4.0 
 poetry
 django-filter
+rollbar
