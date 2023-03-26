@@ -24,6 +24,8 @@ class TaskFilterForm(django_filters.FilterSet):
         label='Метка',
         queryset=Label.objects.all()
     )
+    status = forms.CharField(required=True, label='Статус')
+    executor = forms.CharField(required=True, label='Исполнитель')
 
     def get_self_tasks(self, queryset, name, value):
         if value:
