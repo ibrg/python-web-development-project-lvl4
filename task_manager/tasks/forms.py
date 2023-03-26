@@ -6,8 +6,8 @@ from .models import Task
 
 
 class TaskFrom(forms.ModelForm):
-    status = forms.CharField(required=True, label='Статус')
-    executor = forms.CharField(required=True, label='Исполнитель')
+    # status = forms.CharField(required=True, label='Статус')
+    # executor = forms.CharField(required=True, label='Исполнитель')
 
     class Meta:
         model = Task
