@@ -29,7 +29,6 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG')
-TEMPLATE_DEBUG = False
 
 ALLOWED_HOSTS = ['fluent-number-production.up.railway.app', 'webserver', 'localhost', '127.0.0.1']
 CSRF_TRUSTED_ORIGINS = ['https://fluent-number-production.up.railway.app',]
@@ -62,7 +61,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
-    'rollbar.contrib.django.middleware.RollbarNotifierMiddleware',
+    'rollbar.contrib.django.middleware.RollbarNotifierMiddleware'
 ]
 
 ROOT_URLCONF = 'task_manager.urls'
@@ -160,5 +159,5 @@ ROLLBAR = {
     'access_token': os.getenv('ROLLBAR_POST_SERVER_ITEM'),
     'environment': 'development' if DEBUG else 'production',
     'branch': 'master',
-    'root': BASE_DIR / 'task_manager',
+    'root': os.path.abspath('task_manager/'),
 }
