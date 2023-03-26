@@ -44,11 +44,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bootstrap4',
+    'django_filters',
     'core.apps.CoreConfig',
     'users.apps.UsersConfig',
     'statuses.apps.StatusesConfig',
     'tasks.apps.TasksConfig',
-    'labels.apps.LabelsConfig'
+    'labels.apps.LabelsConfig',
 ]
 
 MIDDLEWARE = [

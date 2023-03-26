@@ -1,10 +1,16 @@
 {% extends 'base.html' %}
-
+{% load bootstrap4 %}
 
 {% block content %}
     <h1>Задачи</h1>
 
     <a class="nav-link" href="{% url 'task_create' %}">Создать задачу</a>
+    
+    <form method="get">
+        {% bootstrap_form filter.form %}
+        <input type="submit" class="btn btn-primary" value="Показать" />
+    </form>
+
     <table class="table table-striped">
         <thead>
             <tr>
@@ -19,7 +25,7 @@
         </thead>
         <tbody>
             
-            {% for task in object_list %}
+            {% for task in filter.qs %}
             <tr>
                 <td>{{ task.id }}</td>
                 <td>

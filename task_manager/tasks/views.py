@@ -1,19 +1,17 @@
 from django.utils.translation import gettext as _
-
 from django.contrib.messages.views import SuccessMessageMixin
-
-from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django_filters.views import FilterView
 
 from .models import Task
-from .forms import TaskFrom
+from .forms import TaskFrom, TaskFilterForm
 from core.permissions import IsOwner
 
 
-class TaskListView(ListView):
-    model = Task
-    tempalte_name = 'tasks/task_list.html'
+class TaskListView(FilterView):
+    filterset_class = TaskFilterForm
+    tempalte_name = 'tasks/task_filter.html'
 
 
 class TaskDetailView(DetailView):
