@@ -3,7 +3,6 @@ name = "hexlet-code"
 version = "0.1.0"
 description = ""
 authors = ["Roman <romanbezh@gmail.com>"]
-readme = "README.md"
 packages = [{include = "task_manager"}]
 
 [tool.poetry.dependencies]
