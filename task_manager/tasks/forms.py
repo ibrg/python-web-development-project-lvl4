@@ -11,7 +11,6 @@ class TaskFrom(forms.ModelForm):
 
     class Meta:
         model = Task
-        # fields = ['status',]
         exclude = ('author', 'created_at')
 
 
