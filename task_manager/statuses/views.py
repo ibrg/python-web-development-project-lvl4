@@ -5,7 +5,7 @@ from django.http import HttpResponseRedirect
 from django.utils.translation import gettext as _
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.views.generic.list import ListView
-from .models import Status
+from task_manager.statuses.models import Status
 
 
 class StatusListView(ListView):

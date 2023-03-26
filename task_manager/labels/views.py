@@ -4,8 +4,8 @@ from django.http import HttpResponseRedirect
 from django.utils.translation import gettext as _
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.views.generic.list import ListView
-from tasks.models import Task
-from .models import Label
+from task_manager.tasks.models import Task
+from task_manager.labels.models import Label
 
 
 class LabelListView(ListView):

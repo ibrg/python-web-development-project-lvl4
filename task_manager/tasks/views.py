@@ -4,9 +4,9 @@ from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django_filters.views import FilterView
 
-from .models import Task
-from .forms import TaskFrom, TaskFilterForm
-from core.permissions import IsOwner
+from task_manager.tasks.models import Task
+from task_manager.tasks.forms import TaskFrom, TaskFilterForm
+from task_manager.core.permissions import IsOwner
 
 
 class TaskListView(FilterView):

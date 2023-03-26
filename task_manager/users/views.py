@@ -5,10 +5,8 @@ from django.urls import reverse_lazy
 from django.utils.translation import gettext as _
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.views.generic.list import ListView
-
-from core.permissions import AccessRequired, LoginRequired
-
-from .forms import UserRegistrationForm
+from task_manager.core.permissions import AccessRequired, LoginRequired
+from task_manager.users.forms import UserRegistrationForm
 
 
 class Login(SuccessMessageMixin, LoginView):

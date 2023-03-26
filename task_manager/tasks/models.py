@@ -2,8 +2,8 @@ from django.contrib.auth.models import User
 from django.db import models
 from django.utils.translation import gettext as _
 
-from statuses.models import Status
-from labels.models import Label
+from task_manager.statuses.models import Status
+from task_manager.labels.models import Label
 
 
 class Task(models.Model):
