@@ -3,7 +3,7 @@ from django.utils.translation import gettext as _
 
 
 class Label(models.Model):
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=200, verbose_name="Имя")
     created_at = models.DateTimeField(auto_now=True)
 
     class Meta:

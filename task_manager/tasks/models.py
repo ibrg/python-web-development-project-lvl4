@@ -7,12 +7,12 @@ from task_manager.labels.models import Label
 
 
 class Task(models.Model):
-    name = models.CharField(max_length=200, unique=True)
-    description = models.TextField(blank=True, null=True)
-    status = models.ForeignKey(Status, on_delete=models.RESTRICT)
+    name = models.CharField(max_length=200, unique=True, verbose_name="Имя")
+    description = models.TextField(blank=True, null=True, verbose_name="Описание")
+    status = models.ForeignKey(Status, on_delete=models.RESTRICT, verbose_name="Статус")
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='author')
-    executor = models.ForeignKey(User, on_delete=models.CASCADE, related_name='executor', blank=True, null=True)
-    labels = models.ManyToManyField(Label, related_name='labels')
+    executor = models.ForeignKey(User, on_delete=models.CASCADE, related_name='executor', blank=True, null=True, verbose_name="Исполнитель")
+    labels = models.ManyToManyField(Label, related_name='labels', verbose_name="Метка")
     creatad_at = models.DateTimeField(auto_now=True)
 
     class Meta:

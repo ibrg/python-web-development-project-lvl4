@@ -4,7 +4,7 @@ from django.utils.translation import gettext as _
 
 class Status(models.Model):
     """Model definition for Status."""
-    name = models.CharField(max_length=130, unique=True)
+    name = models.CharField(max_length=130, unique=True, verbose_name="Имя")
     creatad_at = models.DateTimeField(auto_now=True)
 
     class Meta:
