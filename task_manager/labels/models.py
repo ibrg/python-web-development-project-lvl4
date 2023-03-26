@@ -8,8 +8,8 @@ class Label(models.Model):
 
     class Meta:
         """Meta definition for Status."""
-        verbose_name = _('Label')
-        verbose_name_plural = _('Labels')
+        verbose_name = _('Меткa')
+        verbose_name_plural = _('Метки')
 
     def __str__(self):
         return self.name

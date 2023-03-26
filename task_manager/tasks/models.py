@@ -18,7 +18,7 @@ class Task(models.Model):
     class Meta:
         """Meta definition for Task."""
         verbose_name = _('Task')
-        verbose_name_plural = _('Tasks')
+        verbose_name_plural = _('Задачи')
 
     def __str__(self):
         """Unicode representation of Task."""

@@ -3,7 +3,7 @@
 {% block content %}
     <h1 class="my-4">{% translate 'Удаление пользователя' %}</h1>
 
-    <p>{% translate 'Вы уверены, что хотите удалить new user?' %}</p>
+    <p>{% translate 'Вы уверены, что хотите удалить {{ user }}?' %}</p>
         <form method="post">
             {% csrf_token %}
             <input class="btn btn-danger" type="submit" value="{% translate 'Да, удалить' %}">

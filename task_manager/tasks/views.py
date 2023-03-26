@@ -48,7 +48,7 @@ class TaskUpdateView(SuccessMessageMixin, UpdateView):
 
     def get_context_data(self, **kwargs):
         context = super(TaskUpdateView, self).get_context_data(**kwargs)
-        context['title'] = _('Изменение задачи ')
+        context['title'] = _('Изменение задачи')
         context['btn_name'] = _('Изменить')
         return context
 
