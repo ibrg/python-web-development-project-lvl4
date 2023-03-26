@@ -3,7 +3,7 @@
 *.pot
 *.pyc
 __pycache__
-db.sqlite3
+# db.sqlite3
 media
 .env
 # Backup files # 
@@ -53,7 +53,7 @@ atlassian-ide-plugin.xml
 .Python build/ 
 develop-eggs/ 
 dist/ 
-downloads/ 
+downloads/
 eggs/ 
 .eggs/ 
 lib/ 
