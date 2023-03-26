@@ -6,9 +6,12 @@ from .models import Task
 
 
 class TaskFrom(forms.ModelForm):
+    status = forms.CharField(required=True, label='Статус')
+    executor = forms.CharField(required=True, label='Исполнитель')
 
     class Meta:
         model = Task
+        # fields = ['status',]
         exclude = ('author', 'created_at')
 
 
@@ -24,9 +27,7 @@ class TaskFilterForm(django_filters.FilterSet):
         label='Метка',
         queryset=Label.objects.all()
     )
-    status = forms.CharField(required=True, label='Статус')
-    executor = forms.CharField(required=True, label='Исполнитель')
-
+  
     def get_self_tasks(self, queryset, name, value):
         if value:
             queryset = queryset.filter(author=self.request.user)
