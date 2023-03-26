@@ -1,4 +1,5 @@
 runserver:
+	poetry run python manage.py makemigrations
 	poetry run python manage.py migrate
 	poetry run gunicorn --env DJANGO_SETTINGS_MODULE=task_manager.settings --chdir task_manager task_manager.wsgi
 
