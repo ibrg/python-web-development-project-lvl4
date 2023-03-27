@@ -1,5 +1,5 @@
 runserver:
-	poetry run gunicorn --env DJANGO_SETTINGS_MODULE=task_manager.settings --chdir task_manager task_manager.wsgi
+	poetry run python manage.py runserver
 
 test:
 	poetry run python manage.py test tests
