@@ -20,8 +20,7 @@ class Task(models.Model):
         related_name='executors',
         blank=True,
         null=True,
-        verbose_name="Исполнитель"
-        )
+        verbose_name='Исполнитель')
     labels = models.ManyToManyField(Label, related_name='labels', verbose_name="Метки", blank=True)
     creatad_at = models.DateTimeField(auto_now=True)
 

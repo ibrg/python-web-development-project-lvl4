@@ -17,8 +17,7 @@ class TaskFilterForm(django_filters.FilterSet):
     self_tasks = django_filters.BooleanFilter(
         widget=forms.CheckboxInput,
         method='get_self_tasks',
-        label=_('Только свои задачи')
-        )
+        label=_('Только свои задачи'))
 
     labels = django_filters.ModelChoiceFilter(
         field_name='labels',
