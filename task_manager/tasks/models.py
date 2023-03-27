@@ -12,7 +12,7 @@ class Task(models.Model):
     status = models.ForeignKey(Status, on_delete=models.RESTRICT, verbose_name="Статус")
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='author')
     executor = models.ForeignKey(User, on_delete=models.CASCADE, related_name='executor', blank=True, null=True, verbose_name='Исполнитель')
-    labels = models.ManyToManyField(Label, related_name='labels', verbose_name="Метка", blank=True, null=True,)
+    labels = models.ManyToManyField(Label, related_name='labels', verbose_name="Метка", blank=True)
     creatad_at = models.DateTimeField(auto_now=True)
 
     class Meta:

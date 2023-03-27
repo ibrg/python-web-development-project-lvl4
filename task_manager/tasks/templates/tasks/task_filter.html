@@ -7,11 +7,19 @@
     <a class="nav-link" href="{% url 'task_create' %}">
         {% translate 'Создать задачу' %}
     </a>
-    
-    <form method="get">
-        {% bootstrap_form filter.form %}
-        <input type="submit" class="btn btn-primary" value="{% translate 'Показать' %}" />
-    </form>
+    <div class="card mb-3">
+        <div class="card-body bg-dark text-light">
+        <form method="get" class="form-inline center">
+            {% bootstrap_field filter.form.status field_class='col-sm-6 col-md-auto ' %}
+            {% bootstrap_field filter.form.executor field_class='col-sm-6 col-md-auto' %}
+            {% bootstrap_field filter.form.labels field_class='col-sm-6 col-md-auto' %}
+            {% bootstrap_field filter.form.self_tasks field_class='col-sm-6 col-md-auto' %}
+            {% buttons %}
+            <input type="submit" class="btn btn-primary col-sm-6 col-md-auto" value="{% translate 'Показать' %}" />
+            {% endbuttons %}
+        </form>
+        </div>
+    </div>
 
     <table class="table table-striped">
         <thead>
@@ -41,7 +49,7 @@
                     {{ task.executor }}
                     {% endif %}
                 </td>
-                <td>{{ task.creatad_at|date:"d.m.Y t:m" }}</td>
+                <td>{{ task.creatad_at|date:"d.m.Y H:i" }}</td>
                 <td>
                     <a href="{% url 'task_update' task.id %}">{% translate 'Изменить' %}</a>
                     <br>
