@@ -1,10 +1,9 @@
 {% extends 'base.html' %}
-
-
+{% load i18n %}
 
 {% block content %}
     <h1 class="my-4">
-        Просмотр задачи
+       {% translate 'Просмотр задачи' %}
     </h1>
     <div class="card">
         <div class="card-header bg-secondary text-white">
@@ -22,20 +21,20 @@
                     </div>
                 </div>
                 <div class="row p-1">
-                    <div class="col">Исполнитель</div>
+                    <div class="col">{% translate 'Исполнитель' %}</div>
                     <div class="col">{{ object.executor }}</div>
                 </div>
                 <div class="row p-1">
-                    <div class="col">Статус</div>
+                    <div class="col">{% translate 'Статус' %}</div>
                     <div class="col">11</div>
                 </div>
                 <div class="row p-1">
-                    <div class="col">Дата создания</div>
+                    <div class="col">{% translate 'Дата создания' %}</div>
                     <div class="col">{{ object.creatad_at|date:"d.m.Y t:m" }}</div>
                 </div>
                 <div class="row p-1">
                     <div class="col">
-                        <h6>Метки:</h6>
+                        <h6>{% translate 'Метки' %}:</h6>
                         <ul>
                             {% if object.labels %}
                                 {% for label in object.labels.all  %}
@@ -47,9 +46,9 @@
                 </div>
                 <div class="row p-1">
                     <div class="col">
-                        <a href="{% url 'task_update' object.id %}">Изменить</a>
+                        <a href="{% url 'task_update' object.id %}">{% translate 'Изменить' %}</a>
                         <br>
-                        <a href="{% url 'task_delete' object.id %}">Удалить</a>
+                        <a href="{% url 'task_delete' object.id %}">{% translate 'Удалить' %}</a>
                     </div>
                 </div>
             </div>

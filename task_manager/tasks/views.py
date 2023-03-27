@@ -57,4 +57,4 @@ class TaskDeleteView(IsOwner, SuccessMessageMixin, DeleteView):
     model = Task
     tempalte_name = 'tasks/delete.html'
     success_url = '/tasks/'
-    success_message = _('Задача успешно удалён')
+    success_message = _('Задача успешно удалёна')

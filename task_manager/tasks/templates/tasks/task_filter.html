@@ -1,25 +1,27 @@
 {% extends 'base.html' %}
-{% load bootstrap4 %}
+{% load bootstrap4 i18n %}
 
 {% block content %}
-    <h1>Задачи</h1>
+    <h1>{% translate 'Задачи' %}</h1>
 
-    <a class="nav-link" href="{% url 'task_create' %}">Создать задачу</a>
+    <a class="nav-link" href="{% url 'task_create' %}">
+        {% translate 'Создать задачу' %}
+    </a>
     
     <form method="get">
         {% bootstrap_form filter.form %}
-        <input type="submit" class="btn btn-primary" value="Показать" />
+        <input type="submit" class="btn btn-primary" value="{% translate 'Показать' %}" />
     </form>
 
     <table class="table table-striped">
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Имя</th>
-                <th>Статус</th>
-                <th>Автор</th>
-                <th>Исполнитель</th>
-                <th>Дата создания</th>
+                <th>{% translate 'Имя' %}</th>
+                <th>{% translate 'Статус' %}</th>
+                <th>{% translate 'Автор' %}</th>
+                <th>{% translate 'Исполнитель' %}</th>
+                <th>{% translate 'Дата создания' %}</th>
                 <th></th>
             </tr>
         </thead>
@@ -41,9 +43,9 @@
                 </td>
                 <td>{{ task.creatad_at|date:"d.m.Y t:m" }}</td>
                 <td>
-                    <a href="{% url 'task_update' task.id %}">Изменить</a>
+                    <a href="{% url 'task_update' task.id %}">{% translate 'Изменить' %}</a>
                     <br>
-                    <a href="{% url 'task_delete' task.id %}">Удалить</a>
+                    <a href="{% url 'task_delete' task.id %}">{% translate 'Удалить' %}</a>
                 </td>
 
             </tr>

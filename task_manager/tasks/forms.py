@@ -1,13 +1,11 @@
 import django_filters
 from django import forms
-
+from django.utils.translation import gettext as _
 from task_manager.labels.models import Label
 from .models import Task
 
 
 class TaskFrom(forms.ModelForm):
-    # status = forms.CharField(required=True, label='Статус')
-    # executor = forms.CharField(required=True, label='Исполнитель')
 
     class Meta:
         model = Task
@@ -19,7 +17,8 @@ class TaskFilterForm(django_filters.FilterSet):
     self_tasks = django_filters.BooleanFilter(
         widget=forms.CheckboxInput,
         method='get_self_tasks',
-        label='Только свои задачи')
+        label= _('Только свои задачи')
+        )
 
     labels = django_filters.ModelChoiceFilter(
         field_name='labels',

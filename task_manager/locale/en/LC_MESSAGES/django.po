@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-26 20:20+0300\n"
+"POT-Creation-Date: 2023-03-27 10:15+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -42,8 +42,10 @@ msgid "Меткa"
 msgstr "Label"
 
 #: task_manager/labels/models.py:12
-# msgid "Метки"
-# msgstr "Labels"
+#: task_manager/tasks/templates/tasks/task_detail.html:37
+#: task_manager/templates/layout/navbar.html:20
+msgid "Метки"
+msgstr "Labels"
 
 #: task_manager/labels/templates/labels/label_confirm_delete.html:4
 msgid "Удаление метки"
@@ -51,7 +53,7 @@ msgstr "Removing a label"
 
 #: task_manager/labels/templates/labels/label_confirm_delete.html:6
 #, python-format
-msgid "Вы уверены, что хотите удалить %(label)"
+msgid "Вы уверены, что хотите удалить %(label)s"
 msgstr "Are you sure you want to delete %(label)s"
 
 #: task_manager/labels/templates/labels/label_confirm_delete.html:9
@@ -83,6 +85,8 @@ msgid "Изменение метки"
 msgstr "Changing the label"
 
 #: task_manager/labels/views.py:40 task_manager/statuses/views.py:40
+#: task_manager/tasks/templates/tasks/task_detail.html:49
+#: task_manager/tasks/templates/tasks/task_filter.html:46
 #: task_manager/tasks/views.py:52 task_manager/users/views.py:46
 msgid "Изменить"
 msgstr "Change"
@@ -96,12 +100,15 @@ msgid "Невозможно удалить метку, потому что он�
 msgstr "It is not possible to delete a label because it is in use"
 
 #: task_manager/statuses/models.py:12
+#: task_manager/tasks/templates/tasks/task_detail.html:28
+#: task_manager/tasks/templates/tasks/task_filter.html:21
 msgid "Статус"
 msgstr "Status"
 
 #: task_manager/statuses/models.py:13
-# msgid "Статусы"
-# msgstr "Statuses"
+#: task_manager/templates/layout/navbar.html:17
+msgid "Статусы"
+msgstr "Statuses"
 
 #: task_manager/statuses/templates/statuses/status_confirm_delete.html:4
 msgid "Удаление статуса"
@@ -109,7 +116,7 @@ msgstr "Delete status"
 
 #: task_manager/statuses/templates/statuses/status_confirm_delete.html:6
 #, python-format
-msgid "Вы уверены, что хотите удалить %(status)"
+msgid "Вы уверены, что хотите удалить %(status)s"
 msgstr "Are you sure you want to delete %(status)s"
 
 #: task_manager/statuses/views.py:21
@@ -136,13 +143,19 @@ msgstr "Status successfully deleted"
 msgid "Невозможно удалить статус, потому что он используется"
 msgstr "It is impossible to delete a status because it is in use"
 
+#: task_manager/tasks/forms.py:20
+msgid "Только свои задачи"
+msgstr "Only their own tasks"
+
 #: task_manager/tasks/models.py:20
 msgid "Задача"
-msgstr "Tasks"
+msgstr "Task"
 
 #: task_manager/tasks/models.py:21
-# msgid "Задачи"
-#msgstr "Tasks"
+#: task_manager/tasks/templates/tasks/task_filter.html:5
+#: task_manager/templates/layout/navbar.html:23
+msgid "Задачи"
+msgstr "Tasks"
 
 #: task_manager/tasks/templates/tasks/task_confirm_delete.html:4
 msgid "Удаление задачи"
@@ -150,16 +163,49 @@ msgstr "Deleting a task"
 
 #: task_manager/tasks/templates/tasks/task_confirm_delete.html:6
 #, python-format
-msgid "Вы уверены, что хотите удалить %(task)"
+msgid "Вы уверены, что хотите удалить %(task)s"
 msgstr "Are you sure you want to delete %(task)s"
+
+#: task_manager/tasks/templates/tasks/task_detail.html:6
+msgid "Просмотр задачи"
+msgstr "Task view"
+
+#: task_manager/tasks/templates/tasks/task_detail.html:24
+#: task_manager/tasks/templates/tasks/task_filter.html:23
+msgid "Исполнитель"
+msgstr "executor"
+
+#: task_manager/tasks/templates/tasks/task_detail.html:32
+#: task_manager/tasks/templates/tasks/task_filter.html:24
+msgid "Дата создания"
+msgstr "Creation date"
+
+#: task_manager/tasks/templates/tasks/task_detail.html:51
+#: task_manager/tasks/templates/tasks/task_filter.html:48
+msgid "Удалить"
+msgstr "Delete"
+
+#: task_manager/tasks/templates/tasks/task_filter.html:8
+#: task_manager/tasks/views.py:37
+msgid "Создать задачу"
+msgstr "Create task"    
+
+#: task_manager/tasks/templates/tasks/task_filter.html:13
+msgid "Показать"
+msgstr "Show"
+
+#: task_manager/tasks/templates/tasks/task_filter.html:20
+#: task_manager/users/forms.py:7
+msgid "Имя"
+msgstr "Name"
+
+#: task_manager/tasks/templates/tasks/task_filter.html:22
+msgid "Автор"
+msgstr "Author"
 
 #: task_manager/tasks/views.py:27
 msgid "Задача успешно создана"
 msgstr "The task was successfully created"
-
-#: task_manager/tasks/views.py:37
-msgid "Создать задачу"
-msgstr "Create task"
 
 #: task_manager/tasks/views.py:47
 msgid "Задача успешно изменена"
@@ -170,8 +216,12 @@ msgid "Изменение задачи"
 msgstr "Task change"
 
 #: task_manager/tasks/views.py:60
-msgid "Задача успешно удалён"
+msgid "Задача успешно удалёна"
 msgstr "Task successfully deleted"
+
+#: task_manager/templates/index.html:10
+msgid "Узнать больше"
+msgstr "Learn more"
 
 #: task_manager/templates/layout/navbar.html:4
 msgid "Менеджер задач"
@@ -181,18 +231,6 @@ msgstr "Task Manager"
 #: task_manager/templates/registration/user_list.html:6
 msgid "Пользователи"
 msgstr "Users"
-
-#: task_manager/templates/layout/navbar.html:17
-# msgid "Статусы"
-# msgstr "Statuses"
-
-#: task_manager/templates/layout/navbar.html:20
-msgid "Метки"
-msgstr "Labels"
-
-#: task_manager/templates/layout/navbar.html:23
-# msgid "Задачи"
-# msgstr "Tasks"
 
 #: task_manager/templates/layout/navbar.html:30
 msgid "Выход"
@@ -213,12 +251,16 @@ msgid "Удаление пользователя"
 msgstr "Removing a user"
 
 #: task_manager/templates/registration/user_delete.html:6
-msgid "Вы уверены, что хотите удалить %(user)?"
+msgid "Вы уверены, что хотите удалить {{ user }}?"
 msgstr "Are you sure you want to delete %(user)?"
 
 #: task_manager/templates/registration/user_update.html:6
 msgid "Изменение пользователя"
-msgstr "Changing user"
+msgstr "Chang user"
+
+#: task_manager/users/forms.py:8
+msgid "Фамилия"
+msgstr "last name"
 
 #: task_manager/users/views.py:14
 msgid "Вы залогинены"
@@ -226,7 +268,7 @@ msgstr "You are logged in"
 
 #: task_manager/users/views.py:18
 msgid "Войти"
-msgstr "Log in"
+msgstr "Log In"
 
 #: task_manager/users/views.py:27
 msgid "Вы разлогинены"
