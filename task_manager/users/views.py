@@ -9,6 +9,7 @@ from task_manager.core.permissions import AccessRequired, LoginRequired
 from task_manager.users.forms import UserRegistrationForm
 from .models import ExampleUser
 
+
 class Login(SuccessMessageMixin, LoginView):
     template_name = 'registration/login.html'
     success_message = _('Вы залогинены')
