@@ -27,9 +27,9 @@ class TaskCreateView(SuccessMessageMixin, CreateView):
     success_message = _('Задача успешно создана')
 
     def form_valid(self, form):
-        obj = form.save(commit=False)
-        obj.author = self.request.user
-        obj.save()
+        self.obj = form.save(commit=False)
+        self.obj.author = self.request.user
+        self.obj.save()
         return super().form_valid(form)
 
     def get_context_data(self, **kwargs):
