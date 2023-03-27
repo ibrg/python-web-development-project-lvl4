@@ -1,4 +1,4 @@
-from django.contrib.auth.models import User
+# from django.contrib.auth.models import User
 from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.messages.views import SuccessMessageMixin, messages
 from django.urls import reverse_lazy
@@ -7,7 +7,7 @@ from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.views.generic.list import ListView
 from task_manager.core.permissions import AccessRequired, LoginRequired
 from task_manager.users.forms import UserRegistrationForm
-
+from .models import ExampleUser
 
 class Login(SuccessMessageMixin, LoginView):
     template_name = 'registration/login.html'
@@ -29,12 +29,12 @@ class Logout(SuccessMessageMixin, LogoutView):
 
 
 class UserListView(ListView):
-    model = User
+    model = ExampleUser
     template_name = "registration/user_list.html"
 
 
 class UserUpdateView(LoginRequired, AccessRequired, SuccessMessageMixin, UpdateView):
-    model = User
+    model = ExampleUser
     form_class = UserRegistrationForm
     template_name = "registration/user_update.html"
     template_name_suffix = '_update_form'
@@ -61,7 +61,7 @@ class UserCreateView(SuccessMessageMixin, CreateView):
 
 
 class UserDelete(LoginRequired, AccessRequired, SuccessMessageMixin, DeleteView):
-    model = User
+    model = ExampleUser
     template_name = 'registration/user_delete.html'
     success_url = reverse_lazy('users_list')
     success_message = _('Пользователь успешно удалён')

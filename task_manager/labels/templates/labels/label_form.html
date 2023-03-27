@@ -3,7 +3,7 @@
 
 
 {% block content %}
-    <h1 class="my-4"> {{title }}</h1>
+    <h1 class="my-4"> {{ title }}</h1>
     <form action="." method="post" class="form">
         {% csrf_token %}
         {% bootstrap_form form %}

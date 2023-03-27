@@ -149,6 +149,8 @@ LOGIN_URL = '/'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
+AUTH_USER_MODEL = "users.ExampleUser"
+
 # ROLLBAR = {
 #     'access_token': os.getenv('ROLLBAR_POST_SERVER_ITEM'),
 #     'environment': 'development' if DEBUG else 'production',
